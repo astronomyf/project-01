@@ -12,7 +12,7 @@ Ci sarà quindi un ciclo principale che durerà N secondi e si ripeterà per X s
 ### Prodotti
 > Utilizzare un file in formato JSON come sorta di database (oppure un Array per semplificare) di nomi di prodotti e varie informazioni, es: nome, categoria, peso, costo. In seguito, una volta creato l'oggetto Prodotto grazie alla classe Prodotti si aggiungerà lo stato, la data di scandenza, l'ID e i check. 
 
-Ogni settimana vengono generati X prodotti che si aggiungono all'array LISTA SETTIMANALE, contemporaneamente una funzione stabilisce quali prodotti rimuovere dallo stesso array in base alla scadenza o al numero di settimane che è stato sullo scaffale.
+> Ogni settimana vengono generati X prodotti che si aggiungono all'array LISTA SETTIMANALE, contemporaneamente una funzione stabilisce quali prodotti rimuovere dallo stesso array in base alla scadenza o al numero di settimane che è stato sullo scaffale.
 
 # To-dos
 * [-] Creare classe generica per prodotti
