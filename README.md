@@ -32,4 +32,4 @@ Ogni settimana vengono generati X prodotti che si aggiungono all'array LISTA SET
 * [-] Funzione per generare output dei prodotti
   * Deve avere padding che sono caratteri configurabili! 
 * [-] Creare un config object settabile dal manager con le info riguardanti il programma e la durata
-
+* [-] Suddividere in più file il progetto per ottimizzare la struttura
