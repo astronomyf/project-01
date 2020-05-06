@@ -1,5 +1,5 @@
 # Project-01
-Personal school project for WDM's javascript course.
+> Personal school project for WDM's javascript course.
 
 # Informazioni generali
 Il manager imposta un valore di X settimane, ovvero per quante volte dovrà essere stampata una lista di prodotti. Ogni settimana equivale a N secondi che vengono impostati sempre dal manager. Ogni settimana arrivano Y prodotti (generati randomicamente da un array di prodotti), per ogni prodotto viene impostato uno stato, un controllo (check), una data di scadenza, un ID etc.
