@@ -15,7 +15,7 @@ Utilizzare un file in formato JSON come sorta di database (oppure un Array per s
 Ogni settimana vengono generati X prodotti che si aggiungono all'array LISTA SETTIMANALE, contemporaneamente una funzione stabilisce quali prodotti rimuovere dallo stesso array in base alla scadenza o al numero di settimane che è stato sullo scaffale.
 
 # To-dos
-* [] Creare classe generica per prodotti
+* [-] Creare classe generica per prodotti
   * Nome
   * Stato
   * Checks
