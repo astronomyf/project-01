@@ -23,13 +23,13 @@ Ogni settimana vengono generati X prodotti che si aggiungono all'array LISTA SET
   * Peso
   * ID
   * Data scadenza
-* [] Creare lista prodotti (Array)
+* [-] Creare lista prodotti (Array)
 * [X] Creare funzione per estrarre un prodotto a caso da array
-* [] Funzione per avere un unico ID 
-* [] Funzione per generare data di scadenza
-* [] Funzione per aggiungere zeri (es. 001 o 01) davanti a ID del prodotto
-* [] Funzione per formattare la data
-* [] Funzione per generare output dei prodotti
+* [-] Funzione per avere un unico ID 
+* [-] Funzione per generare data di scadenza
+* [-] Funzione per aggiungere zeri (es. 001 o 01) davanti a ID del prodotto
+* [-] Funzione per formattare la data
+* [-] Funzione per generare output dei prodotti
   * Deve avere padding che sono caratteri configurabili! 
-* [] Creare un config object settabile dal manager con le info riguardanti il programma e la durata
+* [-] Creare un config object settabile dal manager con le info riguardanti il programma e la durata
 
