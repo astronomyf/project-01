@@ -55,7 +55,7 @@ for(var j = 0; j < 30; j++)
     rn = Math.floor(Math.random() * ProductsName.length); //i diventa un intero casuale tra 0 e la lunghezza dell'array dei nomi dei prodotti
     cs = Math.floor(Math.random() * (50 - 0) + 0); //funzione per il costo random tra 0 e 500
     ps = Math.floor(Math.random() * (50 - 0) + 0); //funzione per il peso random tra 0 e 500
-    p[j] = new Product(id, ProductsName[rn], 'new', randomDate('01-01-2020'), cs + " Euro", ps + "g"); //alla posizione j crea un oggetto con tutte le proprietà definite
+    p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), cs + " Euro", ps + "g"); //alla posizione j crea un oggetto con tutte le proprietà definite
     id++;
     console.log(p[j]);
 }
