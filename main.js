@@ -17,9 +17,9 @@ function randomDate(date1, date2){
     }
 }
 
-function IdInitializer(i) //funzione che inizializza gli id dei prodotti
+function IdInitializer(i)
 {
-    if(i.toString().length == 1) //se la lunghezza dell'id è 1, aggiunge due 0 prima, altrimenti ne aggiunge 1
+    if(i.toString().length == 1)
     {
         i = "00" + i;
     }
@@ -53,9 +53,9 @@ for(var j = 0; j < 30; j++)
 {
     id = IdInitializer(id);
     rn = Math.floor(Math.random() * ProductsName.length); //i diventa un intero casuale tra 0 e la lunghezza dell'array dei nomi dei prodotti
-    cs = Math.floor(Math.random() * (50 - 0) + 0); //funzione per il costo random tra 0 e 500
-    ps = Math.floor(Math.random() * (50 - 0) + 0); //funzione per il peso random tra 0 e 500
-    p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), cs + " Euro", ps + "g"); //alla posizione j crea un oggetto con tutte le proprietà definite
+    cs = Math.floor(Math.random() * (10.01 - 1.01) + 1.01); //funzione per il costo random tra 0 e 500
+    ps = Math.floor(Math.random() * (10.01 - 1.01) + 1.01); //funzione per il peso random tra 0 e 500
+    p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), cs + "$", ps + "g");
     id++;
     console.log(p[j]);
 }
