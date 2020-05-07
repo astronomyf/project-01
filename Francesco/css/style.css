@@ -1,0 +1,23 @@
+/**
+ * Main css file.
+ */
+
+ body {
+     padding: 20px;
+ }
+
+ .row-margin {
+     margin-top: 20px;
+ }
+
+ .margin-between {
+     margin-left: 20px;
+     margin-right: 20px;
+     font-size: 20px;
+     color: grey;
+ }
+
+ .btn {
+     width: 150px;
+ }
+
