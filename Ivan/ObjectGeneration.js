@@ -1,4 +1,17 @@
+/**
+ * @file: ObjectGeneration.js
+ * @author: Ivan Meotto
+ * Purpose of file:
+ *
+ * This file allows to create the object "Product", with
+ * his attributes Id, Name, Price, Weight and Status.
+ * Every property is randomized and selected from a pre-initialized
+ * array.
+**/
+
+//array of usable products' names
 var ProductsName = ['Cheese', 'Banana', 'Apple', 'Rice', 'Meat', 'Nutella', 'Green Beans', 'Salad', 'Roast Beef', 'Dried Fruit', 'Pasta','Soap','Toilet Paper','Hamburger','Water','Coca-Cola','Chicken Wings'];
+//variable used for setting a product's id
 var id = 0;
 
 function randomDate(date1, date2){
@@ -17,45 +30,51 @@ function randomDate(date1, date2){
     }
 }
 
+/**
+ * This function takes an id parameter and, according to his ciphers' number, writes one or two 0 before it
+ * @param i, the id which will be modified
+ * @return i, modified with one or two 0
+**/
 function IdInitializer(i)
 {
     if(i.toString().length == 1)
     {
-        i = "00" + i;
+        i = "00" + i; //if i has 1 cipher, the function returns "00i"
     }
-    else
+    else if(i.toString().length == 2)
     {
-        i = "0" + i;
+        i = "0" + i; //if i has 2 ciphers, the function returns "0i"
     }
-    return i;
+    return i; //if i has more than 2 ciphers, the function will just return "i"
 }
 
-//classe per definire gli oggetti del negozio
+//class used for creating the products
 class Product
 {
     constructor(id, name, status, data, price, weight)
     {
-        this.id = id; //parametro dell'id
-        this.name = name; //parametro del nome
-        this.status = status; //parametro dello status
-        this.data = data; //parametro della data
-        this.price = price; //parametro del costo
-        this.weight = weight; //parametro del peso
+        this.id = id; //id parameter
+        this.name = name; //name parameter
+        this.status = status; //status parameter
+        this.data = data; //data parameter
+        this.price = price; //price parameter
+        this.weight = weight; //weight parameter
     }
 }
 
-var rn = 0; //variabile per i nomi random
-var rs = 0; //variabile per gli status random
-var ps = 0; //variabile per il peso random
-var cs = 0; //variabile per il costo random
-var p = []; //array vuoto per i prodotti
+var rn = 0; //this variable is used for generating random products' name
+var rs = 0; //this variable is used for generating random products' status
+var rw = 0; //this variable is used for generating random products' weight
+var rp = 0; //this variable is used for generating random products' price
+var p = []; //array used for storing all generated products
 for(var j = 0; j < 30; j++)
 {
     id = IdInitializer(id);
-    rn = Math.floor(Math.random() * ProductsName.length); //i diventa un intero casuale tra 0 e la lunghezza dell'array dei nomi dei prodotti
-    cs = Math.floor(Math.random() * (10.01 - 1.01) + 1.01); //funzione per il costo random tra 0 e 500
-    ps = Math.floor(Math.random() * (10.01 - 1.01) + 1.01); //funzione per il peso random tra 0 e 500
-    p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), cs + "$", ps + "g");
+    rn = Math.floor(Math.random() * ProductsName.length); //rn assumes a random value between 0 and the ProductsName array's length
+    rp = Math.floor(Math.random() * (10 - 1) + 1); //rp assumes a random value between 0 and 10, and is then used as price for the product
+    rw = Math.floor(Math.random() * (10 - 1) + 1); //rw assumes a random value between 0 and 10, and is then used as weight for the product
+    p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), rp + "$", rw + "g"); //the j element of the p array becomes the randomly generated product
+    //Qua dovremmo aggiungere il controllo sulla data per mettere lo status
     id++;
     console.log(p[j]);
 }
