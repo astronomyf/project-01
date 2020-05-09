@@ -5,11 +5,12 @@
  * Config file for the manager's settings.
  */
 
-var configSettings = {
+ //config object with default settings
+ var configSettings = {
 
     weeksBeforeOld: 3,
     numberOfNewProducts: 4,
     numberOfDays: 5,
     numberOfWeeks: 6,
-    durationInSeconds: 7
-}
+    numberOfSeconds: 7
+ }

@@ -5,10 +5,14 @@
  * Main file for our project.
  */
 
- var timerId = setInterval(function(configSettings){
-    if(count > configSettings.numberOfWeeks) {
-        clearInterval(timerId);
-    }
-    //else 
-    //print list and update it
- }, seconds);
+ var duration = configSettings.numberOfSeconds * 1000;
+
+ function runProgram() {
+    //qui si richiamano le funzioni principali e si stampa la lista
+    var dayId = setInterval(function(){
+        var aWeek = duration;
+    }, 1000);
+ }
+
+ //print and update list each week
+ var weekId = setInterval(runProgram, duration);

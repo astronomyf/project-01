@@ -26,27 +26,27 @@
             <div id="form-settings" class="mx-auto" style="display: none;">
                 <form>
                     <div class="form-group">
-                      <label for="formGroupExampleInput">How many weeks should I run?</label>
+                      <label for="numberOfWeeks">How many weeks should I run?</label>
                       <input type="text" class="form-control" id="numberOfWeeks" placeholder="Number of weeks">
                     </div>
                     <div class="form-group">
-                      <label for="formGroupExampleInput2">How many weeks before a product gets Old?</label>
+                      <label for="weeksBeforeOld">How many weeks before a product gets old?</label>
                       <input type="text" class="form-control" id="weeksBeforeOld" placeholder="Number of weeks">
                     </div>
                     <div class="form-group">
-                      <label for="formGroupExampleInput">How many days from the current date before I start?</label>
+                      <label for="numberOfDays">How many days from the current date before I start?</label>
                       <input type="text" class="form-control" id="numberOfDays" placeholder="Number of days">
                     </div>
                     <div class="form-group">
-                      <label for="formGroupExampleInput2">How many new products arrive each week?</label>
+                      <label for="numberOfNewProducts">How many new products arrive each week?</label>
                       <input type="text" class="form-control" id="numberOfNewProducts" placeholder="Number of products">
                     </div>
                     <div class="form-group">
-                        <label for="formGroupExampleInput2">How many seconds a week lasts?</label>
+                        <label for="numberOfSeconds">How many seconds a week lasts?</label>
                         <input type="text" class="form-control" id="numberOfSeconds" placeholder="Number of seconds">
                     </div>
-                    <button type="button" id="settings-button" class="btn btn-warning float-left" onclick="customSettings();">Go back</button>
-                    <button type="button" id="run-button" class="btn btn-success float-right" onclick="startCustomSettings();">Run</button>
+                    <button type="button" id="settings-button" class="btn btn-outline-primary float-left" onclick="customSettings();">Go back</button>
+                    <button type="button" id="run-button" class="btn btn-success float-right" onclick="getCustomSettings();">Run</button>
                 </form>
             </div>
         </div>
