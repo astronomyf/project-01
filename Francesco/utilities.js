@@ -8,7 +8,7 @@
 /**
  * Function takes an id parameter and, according to his ciphers' number, places zeros before it.
  * @param {number} i the id which will be modified
- * @return i modified with one or two 0
+ * @return {string} i modified with one or two 0
  */
  function idInitializer(i) {
     if(i.toString().length == 1) {
@@ -55,13 +55,23 @@
 
  /**
   * Function generates a new object of product.
+  * @param {object} currentWeekDate current week date.
   */
- function generateProduct() {
+ function generateProduct(currentWeekDate) {
     var id = generateId(listaSettimanale);
     var precision = 100; // 2 decimals
-    var randomNameId = Math.floor(Math.random() * ProductsName.length);
+    var randomNameId = Math.floor(Math.random() * productsName.length);
     var randomPrice = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max price is 5
     var randomWeight = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max weight is 5
-    
-    return new Product(id, ProductsName[randomNameId], '', randomDate('01-01-2020'), randomPrice + "$", randomWeight + "g");
+    var randomDate = randomDate(currentWeekDate + 14, configSettings.minDateRange);
+    var productStatus;
+
+    // da rivedere insieme a Gaetano, sistemare la funzione dataParse
+    if(randomDate < currentWeekDate) {
+        productStatus = 3; // expired
+    } else {
+        productStatus = 0; // new
+    }
+
+    return new Product(id, productsName[randomNameId], productStatus, randomDate, randomPrice + "$", randomWeight + "g");
  }

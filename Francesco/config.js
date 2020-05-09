@@ -12,5 +12,6 @@
     numberOfNewProducts: 4,
     numberOfDays: 5,
     numberOfWeeks: 6,
-    numberOfSeconds: 7
+    numberOfSeconds: 7,
+    minDateRange: "04/01/2020"
  }
