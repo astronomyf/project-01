@@ -53,26 +53,23 @@ class Product
 {
     constructor(id, name, status, data, price, weight)
     {
-        this.id = id; //id parameter
-        this.name = name; //name parameter
-        this.status = status; //status parameter
-        this.data = data; //data parameter
-        this.price = price; //price parameter
-        this.weight = weight; //weight parameter
+        this.id = id; 
+        this.name = name; 
+        this.status = status; 
+        this.data = data;
+        this.price = price;
+        this.weight = weight;
     }
 }
 
-var rn = 0; //this variable is used for generating random products' name
-var rs = 0; //this variable is used for generating random products' status
-var rw = 0; //this variable is used for generating random products' weight
-var rp = 0; //this variable is used for generating random products' price
 var p = []; //array used for storing all generated products
+
 for(var j = 0; j < 30; j++)
 {
     id = IdInitializer(id);
-    rn = Math.floor(Math.random() * ProductsName.length); //rn assumes a random value between 0 and the ProductsName array's length
-    rp = Math.floor(Math.random() * (10 - 1) + 1); //rp assumes a random value between 0 and 10, and is then used as price for the product
-    rw = Math.floor(Math.random() * (10 - 1) + 1); //rw assumes a random value between 0 and 10, and is then used as weight for the product
+    var rn = Math.floor(Math.random() * ProductsName.length); //rn assumes a random value between 0 and the ProductsName array's length
+    var rp = Math.floor(Math.random() * (10 - 1) + 1); //rp assumes a random value between 0 and 10, and is then used as price for the product
+    var rw = Math.floor(Math.random() * (10 - 1) + 1); //rw assumes a random value between 0 and 10, and is then used as weight for the product
     p[j] = new Product(id, ProductsName[rn], '', randomDate('01-01-2020'), rp + "$", rw + "g"); //the j element of the p array becomes the randomly generated product
     //Qua dovremmo aggiungere il controllo sulla data per mettere lo status
     id++;
