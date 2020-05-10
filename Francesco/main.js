@@ -5,34 +5,41 @@
  * Main file for our project.
  */
 
- var duration = configSettings.numberOfSeconds * 1000;
- var weekCounter = 0;
- var listaSettimanale = [];
+var duration = configSettings.numberOfSeconds * 1000;
+var weekCounter = 0;
+var weeklyList = [];
 
- function runProgram() {
-    // qui si richiamano le funzioni principali e si stampa la lista
-    for(var i = 0; i < configSettings.numberOfNewProducts; i++) {
-        var prodotto = generateProduct();
-        listaSettimanale.push(prodotto);
-    }
+function runProgram() {
+   var currentDate; // chiamare una funzione per la data corrente
+   var header = "Week of " + currentDate + 
+                "\n-----------------------------------";
+   console.log(header);
 
-    if(weekCounter != 0) { // se è la prima settimana non vanno eseguiti check
-        // esegui i check
-    }
+   // qui si richiamano le funzioni principali e si stampa la lista
+   for(var i = 0; i < configSettings.numberOfNewProducts; i++) {
+       var prodotto = generateProduct();
+       weeklyList.push(prodotto);
+   }
 
-    // rimuovere prodotti scaduti che sono presenti da almeno una settimana
-    // aggiornare gli stati dei prodotti
+   if(weekCounter != 0) { // se è la prima settimana non vanno eseguiti check
+       // esegui i check
+   }
 
-    // stampare lista settimanale
+   // rimuovere prodotti scaduti che sono presenti da almeno una settimana
+   // aggiornare gli stati dei prodotti
 
-    // stampare lista dei prodotti filtrata
+   // stampare lista settimanale
 
-    // dopo tutte le operazioni incrementiamo il counter del num di settimane
-    weekCounter++;
-    if(weekCounter >= configSettings.numberOfWeeks) {
-        clearInterval(weekIntervalId);
-    }
- }
+   // stampare lista dei prodotti filtrata
+   var filterHeader = "Filtered\n--------------";
+   console.log(filterHeader);
 
- //print and update the list each week
- var weekIntervalId = setInterval(runProgram, duration);
+   // dopo tutte le operazioni incrementiamo il counter del num di settimane
+   weekCounter++;
+   if(weekCounter >= configSettings.numberOfWeeks) {
+       clearInterval(weekIntervalId);
+   }
+}
+
+//print and update the list each week
+var weekIntervalId = setInterval(runProgram, duration);

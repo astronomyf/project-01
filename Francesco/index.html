@@ -19,10 +19,11 @@
         </div>
         <div class="row row-margin">
             <div id="buttons-index" class="mx-auto">
-                <button type="button" id="run-button" class="btn btn-success float-left" onclick="start();">Run</button>
+                <button type="button" id="run-button" class="btn btn-success float-left">Run</button>
                 <span class="align-middle margin-between"> or </span>
-                <button type="button" id="settings-button" class="btn btn-primary float-right" onclick="customSettings();">Change settings</button>
+                <button type="button" id="settings-button" class="btn btn-primary float-right">Change settings</button>
             </div>
+            <!-- this form is hidden by default -->
             <div id="form-settings" class="mx-auto" style="display: none;">
                 <form>
                     <div class="form-group">
@@ -45,10 +46,14 @@
                         <label for="numberOfSeconds">How many seconds a week lasts?</label>
                         <input type="text" class="form-control" id="numberOfSeconds" placeholder="Number of seconds">
                     </div>
-                    <button type="button" id="settings-button" class="btn btn-outline-primary float-left" onclick="customSettings();">Go back</button>
-                    <button type="button" id="run-button" class="btn btn-success float-right" onclick="getCustomSettings();">Run</button>
+                    <button type="button" id="back-button" class="btn btn-outline-primary float-left">Go back</button>
+                    <button type="button" id="custom-button" class="btn btn-success float-right" onclick="getCustomSettings();">Run</button>
                 </form>
             </div>
+            <!-- this alert message is hidden by default -->
+            <div id="run-message" class="alert alert-success mx-auto bounce" role="alert">
+               Please open the console to see the result!
+           </div>
         </div>
     </div>
 
