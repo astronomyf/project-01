@@ -5,7 +5,7 @@
  * Extract values from HTML form to customize settings for the printing of the list.
  */
 
- // aggiungere parametri config default
+ // aggiungere parametri config default ?
 
  /**
   * Function hide and display HTML form and buttons on index page.
@@ -67,6 +67,7 @@
  runButton.addEventListener("click", function(){
     // da vedere come farlo partire
     showRunMessage();
+    runProgram();
  }, false);
 
  // change settings
@@ -86,4 +87,5 @@
  customButton.addEventListener("click", function(){
     getCustomSettings();
     showRunMessage();
+    runProgram();
  }, false);

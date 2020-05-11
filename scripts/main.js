@@ -8,44 +8,51 @@
  */
 
 // global variables for the run function
-var duration = configSettings.numberOfSeconds * 1000;
+var duration = Math.floor(Math.random() * (configSettings.maxSeconds - configSettings.minSeconds + 1)) + configSettings.minSeconds; // random duration of seconds 
+var actualDate = configSettings.startDate();
 var weekCounter = 0;
-var startDate = new Date();
+var weekIntervalId;
 var weeklyList = [];
 
-function run() {
-   var currentDate = formatDate(addDaysToDate(startDate, "+", configSettings.numberOfDays));
-
-   var header = "Week of " + currentDate + 
-                "\n-----------------------------------";
+function start() {
+   var header = "Week of " + utility.formatDate(actualDate) + 
+                "\n------------------------------------------------------------------";
    console.log(header);
 
-   // qui si richiamano le funzioni principali e si stampa la lista
+   // generate new products to insert in the list
    for(var i = 0; i < configSettings.numberOfNewProducts; i++) {
-       var product = generator.generateProduct();
+       var product = generator.generateProduct(actualDate, weeklyList);
        weeklyList.push(product);
    }
 
-   if(weekCounter != 0) {
-       // update product status and checks
-       updateStatus(weeklyList);
-   }
+   // print the products
+   output.formattedOutput(weeklyList);
 
-   // rimuovere prodotti scaduti che sono presenti da almeno una settimana
-   // aggiornare gli stati dei prodotti
-
-   // stampare lista settimanale
-
-   // stampare lista dei prodotti filtrata
    var filterHeader = "Filtered\n--------------";
    console.log(filterHeader);
 
-   // dopo tutte le operazioni incrementiamo il counter del num di settimane
-   weekCounter++;
+   // filter products
+   for(var i = 0; i < weeklyList.length; i++) {
+       weeklyList = weeklyList.filter(utility.filterProducts);
+   }
+
+   // print the filtered products
+   output.formattedOutput(weeklyList);
+
+   // update checks and status of the products
+   utility.updateStatus(weeklyList, actualDate, configSettings.weeksBeforeOld);
+
+   // update the current date to a new week
+   actualDate = utility.addDaysToDate(actualDate, "+", configSettings.daysOfWeek);
+
+   // check if the program has reached the maximum number of weekly runs
    if(weekCounter >= configSettings.numberOfWeeks) {
        clearInterval(weekIntervalId);
    }
+   weekCounter++;
 }
 
-//print and update the list each week
-var weekIntervalId = setInterval(run, duration);
+function runProgram() {
+    //print and update the list each week
+    weekIntervalId = setInterval(start, duration);
+}

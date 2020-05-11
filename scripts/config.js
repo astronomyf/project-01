@@ -7,18 +7,26 @@
 
  // config object with default settings
  var configSettings = {
-    
     weeksBeforeOld: 3,
     numberOfNewProducts: 4,
-    numberOfDays: 5,
+    daysToAdd: 5,
     numberOfWeeks: 6,
-    numberOfSeconds: 7,
-    numberOfZeros: 2
+    minSeconds: 2,
+    maxSeconds: 7,
+    numberOfZeros: 2,
+    daysOfWeek: 7,
+    minExpDate: new Date(),
+    startDate: function() {
+       return utility.addDaysToDate(this.minExpDate, "+", this.daysToAdd);
+    },
+    maxExpDate: function() {
+       return utility.addDaysToDate(this.minExpDate, "+", (this.numberOfWeeks * this.daysOfWeek));
+    }
  }
 
 // used to create a product
 class Product {
-    constructor(id, name, status, date, price, weight, check) {
+    constructor(id, name, status, date, price, weight, check, daysOnShelf) {
         this.id = id;
         this.name = name; 
         this.status = status;
