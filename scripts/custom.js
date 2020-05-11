@@ -46,11 +46,11 @@
  function getCustomSettings() {
 
      //get values from HTML form
-     var numberOfWeeks = parseInt(document.getElementById("numberOfWeeks").value);
-     var weeksBeforeOld = parseInt(document.getElementById("weeksBeforeOld").value);
-     var numberOfDays = parseInt(document.getElementById("numberOfDays").value);
-     var numberOfNewProducts = parseInt(document.getElementById("numberOfNewProducts").value);
-     var numberOfSeconds = parseInt(document.getElementById("numberOfSeconds").value);
+     var numberOfWeeks = parseInt(document.getElementById("numberOfWeeks").value) || configSettings.numberOfWeeks;
+     var weeksBeforeOld = parseInt(document.getElementById("weeksBeforeOld").value) || configSettings.weeksBeforeOld;
+     var numberOfDays = parseInt(document.getElementById("numberOfDays").value) || configSettings.numberOfDays;
+     var numberOfNewProducts = parseInt(document.getElementById("numberOfNewProducts").value) || configSettings.numberOfNewProducts;
+     var numberOfSeconds = parseInt(document.getElementById("numberOfSeconds").value) || configSettings.numberOfSeconds;
 
      //update settings with custom values
      configSettings.numberOfWeeks = numberOfWeeks;
