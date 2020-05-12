@@ -1,10 +1,23 @@
 # PROJECT 01: EXPIRY LIST
 
-## *Introduction:*
+## *Summary:*
+
+1. **Introduction**
+2. **Project Description**
+3. **Usage and Configuration**
+4. **Files And Project Structure**
+5. **Files' Snippets**
+6. **Authors**
+7. **Features Delivered**
+8. **Browser Compatibility**
+9. **Changelog and Version History**
+10. **License**
+
+## 1. *Introduction:*
 
 First of all, our team met on `Skype®` to discuss about the assignement and its main points. After the first analysis, we decided to prioritize the main aspect of the program, so that we could establish the program's structure. We did a bit of **Brainstorming** while everyone spoke about their abilities, so that the Team Leader could assign everyone to a fitting role. After everything was set-up, we started coding and writing the documentation to help every member of the team understand the other team members' work, until we reached the end.
 
-## *Project description:*
+## 2. *Project description:* 
 
 This project generates a list of products in a supermarket. Each of these products has an expiry date, and every week the program discards the expired goods. This program generates a constant amount of new products each week, until it reaches a predetermined number of weeks. 
 
@@ -30,7 +43,7 @@ A product has 8 properties:
 * `check`, the number of times the program has checked this item to see if it is expired or not;
 * `daysOnShelf`, the number of days this item has been on the shelf;
 
-## *Usage and Configuration:*
+## 3. *Usage and Configuration:*
 
 1. To launch the program, the user must launch the `index.html` file;
 2. When `index.html` is opened, the user is greeted with a title and two buttons: *Run* and *Change Settings*;
@@ -46,7 +59,7 @@ A product has 8 properties:
    > You can also open the Console before clicking on the *Run* button. In this case, you can see every step of the execution from the beginning instead of seeing it from a certain point
 4. The execution stops automatically. If you want to restart the program, simply press `F5` on the keyboard or click the `Reload that page` button in the top-left corner.
 
-## *Files and Project Structure:*
+## 4. *Files and Project Structure:*
 
 The project is structured as it follows:
 * One main directory with the following files:
@@ -62,9 +75,12 @@ The project is structured as it follows:
    * The `index.html` file;
    * This `readme.md` file;
 
-## *Files' Snippets:*
+## 5. *Files' Snippets:* 
 
 * `config.js`/ class `Product`
+
+> This class is used for creating and manipulating the items that will be randomly created during the program's life cycle.
+
 ```javascript
 class Product {
     constructor(id, name, status, date, price, weight, check, daysOnShelf) {
@@ -78,7 +94,11 @@ class Product {
     }
 }
 ```
+
 * `generator.js`
+
+> This file is used for generating the items. It has an array with names and a function for creating every attribute (randomly generated and/or selected). 
+
 ```javascript
  var generator = (function() {
 
@@ -104,7 +124,7 @@ class Product {
             var precision = 10; // 1 decimal
             var randomNameId = Math.floor(Math.random() * productsNames.length);
             // creare una funzione che genera i valori random
-            var randomPrice = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max price is 5
+            var randomPrice = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 *  precision) / (1 * precision); //max price is 5
             var randomWeight = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max weight is 5
             var initialCheck = 0;
             var expirationDate = generator.randomDate(configSettings.minExpDate, configSettings.maxExpDate());
@@ -145,32 +165,10 @@ class Product {
     }
  })();
  ```
-* `utility.js`/ `updateStatus` function:
-```javascript
-      /**
-       * Function updates the status of a product and the number of check.
-       * @author Gaetano Cimino
-       * @param {object} products an array of products.
-       */
-      updateStatus: function(products, actualDate, weeksBeforeOld) {
-          for (var i = 0; i < products.length; i++) {
-              products[i].check++;
-
-              if(products[i].status == 0) {
-                  products[i].status = 1;
-              }
-
-              if(products[i].check > weeksBeforeOld) {
-                  products[i].status = 2;
-              }
-              
-              if(products[i].expirationDate < actualDate) {
-                  products[i].status = 3;
-              }
-          }
-      }
-```
 * `output.js`/ `formattedOutput` function:
+
+> This file is used for formatting and styling the output in the console. It has functions for changing the date format, updating the check parameter and much more
+
 ```javascript
         /**
          * Function prints the final output.
@@ -209,7 +207,7 @@ class Product {
         }
 ```
 
-## *Authors:*
+## 6. *Authors:*
 
 * ### **Francesco Violante:** *Team Leader*; Sviluppo delle seguenti funzioni e files:
    * `config.js`/ `configSettings`;
@@ -232,7 +230,7 @@ class Product {
    * `main.js` (co-author);
    * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`;
 
-## *Features delivered:*
+## 7. *Features delivered:*
 
 * ### Random Products Generation;
 * ### Different Products every program's iteration;
@@ -242,7 +240,7 @@ class Product {
 * ### Fully customizable experience;
 * ### Different colors in the output;
 
-## *Browser Compatibility:*
+## 8. *Browser Compatibility:*
 
 This program has been tested and works on the following browsers:
 
@@ -252,7 +250,7 @@ This program has been tested and works on the following browsers:
 * **Microsoft Edge;**
 * **Safari;**
 
-## *Changelog and Version History:*
+## 9. *Changelog and Version History:*
 
 > **Version 1.0**
 > 
@@ -305,6 +303,9 @@ This program has been tested and works on the following browsers:
 >
 > * Added documentation for the project;
 > * General bug-fixing;
+
+## 10. *License*
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 .
 
