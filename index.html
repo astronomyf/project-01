@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 01</title>
+    <!-- bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- bootstrap datepicker css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">
+    <![endif]-->
+    <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <div class="mx-auto">
-                <h2>Welcome to the supermarket manager!</h2>
-                <p>
-                    This program outputs a list of supermarket goods filtered by expiry date, you can choose the settings using the button below.
-                </p>
-            </div>
+                <h2 class="mx-auto">Welcome to the supermarket manager!</h2>
+                <div class="mx-auto">
+                    <p>
+                        This program outputs a list of supermarket goods filtered by expiry date, you can choose the settings using the button below.
+                    </p>
+                </div>
         </div>
         <div class="row row-margin">
             <div id="buttons-index" class="mx-auto">
@@ -25,27 +32,74 @@
             </div>
             <!-- this form is hidden by default -->
             <div id="form-settings" class="mx-auto" style="display: none;">
-                <form>
-                    <div class="form-group">
-                      <label for="numberOfWeeks">How many weeks should I run?</label>
-                      <input type="text" class="form-control" id="numberOfWeeks" placeholder="Number of weeks">
+                <h3 class="text-center">Change settings</h3>
+                <p class="text-center">
+                    Insert the values you want to change. Empty fields will use default settings.
+                </p>
+                <form style="margin-top:30px;">
+                  <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="numberOfWeeks" class="font-weight-bold">Weeks of the run</label>
+                        <input type="text" class="form-control" id="numberOfWeeks" placeholder="Number of weeks">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="weeksBeforeOld" class="font-weight-bold">Weeks before a product gets old</label>
+                        <input type="text" class="form-control" id="weeksBeforeOld" placeholder="Number of weeks">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="numberOfDays" class="font-weight-bold">Days to add on the actual date</label>
+                        <input type="text" class="form-control" id="numberOfDays" placeholder="Number of days">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="numberOfNewProducts" class="font-weight-bold">Number of new products</label>
+                        <input type="text" class="form-control" id="numberOfNewProducts" placeholder="Number of products">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="daysOfWeek" class="font-weight-bold">Days in a week?</label>
+                        <input type="text" class="form-control" id="daysOfWeek" placeholder="Number of weeks">
+                      </div>
+                    <div class="form-group col-md-6">
+                        <label for="minSeconds" class="font-weight-bold">Minum number of duration</label>
+                        <input type="text" class="form-control" id="minSeconds" placeholder="Min number of seconds">
                     </div>
-                    <div class="form-group">
-                      <label for="weeksBeforeOld">How many weeks before a product gets old?</label>
-                      <input type="text" class="form-control" id="weeksBeforeOld" placeholder="Number of weeks">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="maxSeconds" class="font-weight-bold">Maximum number of duration</label>
+                        <input type="text" class="form-control" id="maxSeconds" placeholder="Max number of seconds">
                     </div>
-                    <div class="form-group">
-                      <label for="numberOfDays">How many days from the current date before I start?</label>
-                      <input type="text" class="form-control" id="numberOfDays" placeholder="Number of days">
+                    <div class="form-group col-md-6">
+                        <label for="numberOfZeros" class="font-weight-bold">Number of zeros before id</label>
+                        <input type="text" class="form-control" id="numberOfZeros" placeholder="Number of zeros">
                     </div>
-                    <div class="form-group">
-                      <label for="numberOfNewProducts">How many new products arrive each week?</label>
-                      <input type="text" class="form-control" id="numberOfNewProducts" placeholder="Number of products">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="filler" class="font-weight-bold">Custom filler for the output padding</label>
+                        <select id="filler" class="custom-select">
+                            <option value="*">Star</option>
+                            <option value=".">Dot</option>
+                            <option value=" ">Space</option>
+                            <option value="#">Hash</option>
+                            <option value="+">Plus</option>
+                            <option value="_">Underscore</option>
+                            <option value="|">Pipe</option>
+                          </select>
                     </div>
-                    <div class="form-group">
-                        <label for="numberOfSeconds">How many seconds a week lasts?</label>
-                        <input type="text" class="form-control" id="numberOfSeconds" placeholder="Number of seconds">
+                    <div class="form-group col-md-6">
+                        <label for="expirationDate" class="font-weight-bold">Choose the starting date of the program</label>
+                        <div class="input-group date" id="expirationDate" data-provide="datepicker">
+                            <input type="text" class="form-control" data-format="MM-dd-yyyy" placeholder="Select a date">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-th"></span>
+                            </div>
+                        </div>
                     </div>
+                  </div>
                     <button type="button" id="back-button" class="btn btn-outline-primary float-left">Go back</button>
                     <button type="button" id="custom-button" class="btn btn-success float-right" onclick="getCustomSettings();">Run</button>
                 </form>
@@ -58,6 +112,10 @@
     </div>
 
     <!-- end of body -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- custom js -->
     <script type="text/javascript" src="scripts/utility.js"></script>
     <script type="text/javascript" src="scripts/config.js"></script>
     <script type="text/javascript" src="scripts/generator.js"></script>

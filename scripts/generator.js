@@ -2,7 +2,7 @@
  * @file generator.js
  * @author Francesco Violante, Ivan Meotto, Geatano Cimino, Simone Resina
  * 
- * These functions are used as generator for different scopes. 
+ * These functions are used as generators for different scopes. 
  */
 
  var generator = (function() {
@@ -24,14 +24,15 @@
         /**
          * Function generates a new object of product.
          * @author Francesco Violante, Ivan Meotto, Gaetano Cimino
+         * @param {object} actualDate the current date of the program.
+         * @param {object} arrayProducts an array of products.
+         * @returns {object} a randomly generated product item.
          */
         generateProduct: function(actualDate, arrayProducts) {
             var id = generator.uniqueId(arrayProducts);
-            var precision = 10; // 1 decimal
             var randomNameId = Math.floor(Math.random() * productsNames.length);
-            // creare una funzione che genera i valori random
-            var randomPrice = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max price is 5
-            var randomWeight = Math.floor(Math.random() * (5 * precision - 1 * precision) + 1 * precision) / (1 * precision); //max weight is 5
+            var randomPrice = generator.randomDecimal(6, 1, 100);
+            var randomWeight = generator.randomDecimal(999, 1, 10);
             var initialCheck = 0;
             var expirationDate = generator.randomDate(configSettings.minExpDate, configSettings.maxExpDate());
             var initialStatus;
@@ -47,16 +48,29 @@
         /**
          * Function returns a random date between two dates.
          * @author Ivan Meotto
-         * @param {object} start a start date 
-         * @param {object} end an end date
+         * @param {object} start a start date. 
+         * @param {object} end an end date.
+         * @returns {object} a random date.
          */
         randomDate: function(start, end) {
             return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
         },
         /**
+         * Function returns a random decimal number between a range.
+         * @author Francesco Violante
+         * @param {number} max max value of range.
+         * @param {number} min min value of range.
+         * @param {number} precision a start date.
+         * @returns {number} a random decimal number.
+         */
+        randomDecimal: function(max, min, precision) {
+            return (Math.floor(Math.random() * (max * precision - min * precision) + min * precision) / (min * precision)).toFixed(2);
+        },
+        /**
          * Function returns a unique id.
          * @author Francesco Violante
-         * @returns {number} count a unique id
+         * @param {object} arrayProducts an array of products.
+         * @returns {number} a unique id.
          */
         uniqueId: function(arrayProducts) {
             var id;

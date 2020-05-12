@@ -43,22 +43,30 @@ var output = (function() {
         /**
          * Padding function, it formats a string with a specified filler character and a maximum length
          * @author Simone Resina
-         * @param {string} str string to modify
-         * @param {string} filler symbol to use to fill spaces and to format the string
-         * @param {number} maxLength the max length setted to format
+         * @param {string} str string to modify.
+         * @param {string} filler symbol to use to fill spaces and to format the string.
+         * @param {number} maxLength the max length setted to format.
+         * @returns {string} the string formatted.
          */
-        paddingFunc: function(str, filler, maxLength) {
+        paddingFunc: function (str, filler, maxLength) {
             var str = str.toString();
             var diff = (maxLength - str.length) / 2;
-            var stringFiller = output.repeatString(filler, diff);
-            var str = stringFiller.concat(str).concat(stringFiller);
+            var stringFillerEven = output.repeatString(filler, diff);
+            var stringFillerOdd = output.repeatString(filler, (diff - 1));
+
+            if ((str.length % 2) == 0) {
+                var str = stringFillerEven.concat(str).concat(stringFillerEven);
+            } else if ((str.length % 2) == 1) {
+                var str = stringFillerEven.concat(str).concat(stringFillerOdd);
+            }
 
             return output.fillingSpaces(str, filler);
         },
         /**
          * Function to convert the status from number to string
          * @author Simone Resina
-         * @param {number} status 
+         * @param {number} status the numeric status of a product.
+         * @returns {string} the status name.
          */
         convertStatus: function(status) {
             switch (status) {
@@ -73,21 +81,35 @@ var output = (function() {
             }
         },
         /**
+         * Function returns a color from the status value
+         * @author Simone Resina
+         * @param {number} status 
+         */
+        statusColor: function (status) {
+            switch (status) {
+                case 'New':
+                    return 'green';
+                case 'Valid':
+                    return 'cornflowerBlue';
+                case 'Old':
+                    return 'orange';
+                case 'Expired':
+                    return 'red';
+            }
+        },
+        /**
          * Function prints the final output.
          * @author Simone Resina
          * @param {object} products an array of products.
          */
-        formattedOutput: function(products) {
-            var filler = '*';
-            var maxLongLength = 16;
-            var maxShortLength = 8;
+        formattedOutput: function(products, filler) {
             var space = ' ';
 
             for (var i = 0; i < products.length; i++) {
                 var idProduct = utility.idInitializer(products[i].id, configSettings.numberOfZeros) + ':';
-                var nameProduct = output.paddingFunc(products[i].name, filler, maxLongLength);
-                var weightProduct = output.paddingFunc(products[i].weight, filler, maxShortLength);
-                var priceProduct = output.paddingFunc(products[i].price, filler, maxShortLength);
+                var nameProduct = output.paddingFunc(products[i].name, filler, 18);
+                var weightProduct = output.paddingFunc(products[i].weight, filler, 10);
+                var priceProduct = output.paddingFunc(products[i].price, filler, 8);
                 var dateProduct = utility.formatDate(products[i].expirationDate);
                 var statusProduct = output.paddingFunc(output.convertStatus(products[i].status), filler, 10);
                 var checkProduct = function() {
@@ -97,14 +119,16 @@ var output = (function() {
                     } else {
                         word = "checks";
                     }
-                    return '[' + products[i].check + word + ']';
+                    return '[' + products[i].check + space + word + ']';
                 };
 
-                var finalOutput = idProduct + space + nameProduct + space + weightProduct + space +
-                    priceProduct + space + dateProduct + space + statusProduct +
-                    space + checkProduct();
+                var color = output.statusColor(output.convertStatus(products[i].status));
 
-                console.log(finalOutput);
+                var outputString = idProduct + space + nameProduct + space + weightProduct + space +
+                    priceProduct + space + dateProduct;
+
+                console.log(outputString + space +
+                    "%c" + statusProduct, "color:" + color, checkProduct());
             }
         }
     }

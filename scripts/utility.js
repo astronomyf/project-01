@@ -2,7 +2,7 @@
  * @file utility.js
  * @author Francesco Violante, Ivan Meotto, Gaetano Cimino, Simone Resina
  * 
- * Utilities functions.
+ * Utility functions.
  */
 
 var utility = (function() {
@@ -12,12 +12,21 @@ var utility = (function() {
        * Function takes an id parameter and, according to his ciphers' number, places zeros before it.
        * @author Ivan Meotto
        * @param {number} i the id which will be modified.
-       * @param {number} nZeros number of zeros to add.
+       * @param {number} nZeros number of zeros to add before a number.
        * @return {string} i modified with one or two 0.
        */
-      idInitializer: function(i, nZeros) {
+      idInitializer: function(id, nZeros) {
+          var i = id;
           for (var j = 0; j < nZeros; j++) {
-              i = "0" + i;
+            i = "0" + i;
+          }
+
+          if(id > 9) {
+            i = i.substr(1);
+          }
+
+          if(id > 99) {
+            i = i.substr(2);
           }
           return i;
       },
@@ -77,12 +86,10 @@ var utility = (function() {
 
               if(products[i].status == 0) {
                   products[i].status = 1;
-                  //products[i].check += 1;
               }
 
               if(products[i].check > weeksBeforeOld) {
                   products[i].status = 2;
-                  //products[i].check += 1;
               }
               
               if(products[i].expirationDate < actualDate) {
@@ -92,5 +99,3 @@ var utility = (function() {
       }
   }
 })();
-
-// manca funzione per rimuovere prodotti scaduti

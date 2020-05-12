@@ -15,6 +15,7 @@
     maxSeconds: 7,
     numberOfZeros: 2,
     daysOfWeek: 7,
+    filler: '*',
     minExpDate: new Date(),
     startDate: function() {
        return utility.addDaysToDate(this.minExpDate, "+", this.daysToAdd);
@@ -26,7 +27,7 @@
 
 // used to create a product
 class Product {
-    constructor(id, name, status, date, price, weight, check, daysOnShelf) {
+    constructor(id, name, status, date, price, weight, check) {
         this.id = id;
         this.name = name; 
         this.status = status;
