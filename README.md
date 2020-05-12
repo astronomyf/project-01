@@ -60,7 +60,7 @@ The project is structured as it follows:
    * The `index.html` file;
    * This `readme.md` file;
 
-## Files' Snippets
+## Code snippets
 
 * `config.js`/ class `Product`
 ```javascript
