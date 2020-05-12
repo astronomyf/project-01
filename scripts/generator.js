@@ -2,6 +2,8 @@
  * @file generator.js
  * @author Francesco Violante, Ivan Meotto, Geatano Cimino, Simone Resina
  * 
+ * Function to generate.
+ * 
  * These functions are used as generators for different scopes. 
  */
 

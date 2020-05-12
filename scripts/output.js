@@ -4,7 +4,8 @@
  * 
  * Output functions.
  * 
- * Detailed explanation...
+ * Functions output the result to the console which is styled accordingly
+ * to the project's requests.
  */
 
 var output = (function() {

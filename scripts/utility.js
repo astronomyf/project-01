@@ -3,6 +3,8 @@
  * @author Francesco Violante, Ivan Meotto, Gaetano Cimino, Simone Resina
  * 
  * Utility functions.
+ * 
+ * These functions are used multiple times across the project.
  */
 
 var utility = (function() {

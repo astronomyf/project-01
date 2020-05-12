@@ -25,15 +25,15 @@
     }
  }
 
-// used to create a product
+ // used to create a product
 class Product {
-    constructor(id, name, status, date, price, weight, check) {
-        this.id = id;
-        this.name = name; 
-        this.status = status;
-        this.expirationDate = date; 
-        this.price = price;
-        this.weight = weight; 
-        this.check = check;
-    }
+   constructor(id, name, status, date, price, weight, check) {
+       this.id = id;
+       this.name = name; 
+       this.status = status;
+       this.expirationDate = date; 
+       this.price = price;
+       this.weight = weight; 
+       this.check = check;
+   }
 }

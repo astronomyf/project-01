@@ -2,12 +2,17 @@
  * @file main.js
  * @author Francesco Violante, Ivan Meotto, Gaetano Cimino, Simone Resina
  * 
- * Main file project.
+ * Main js file.
  * 
- * Detailed description...
+ * File contains the main function to be called to start the program.
  */
 
+ /**
+  * Main function to call to run the program.
+  * Function is called in custom.js after a click of a button.
+  */
 function startProgram() {
+
     // global variables for the run function
     var duration = (Math.floor(Math.random() * (configSettings.maxSeconds - configSettings.minSeconds + 1)) + configSettings.minSeconds) * 1000; // random duration of seconds 
     var actualDate = configSettings.startDate();
@@ -15,6 +20,10 @@ function startProgram() {
     var weekIntervalId; // id of the setIinterval
     var weeklyList = []; // array of products
 
+    /**
+     * Function contains the program itself.
+     * Called from the below setInterval.
+     */
     function run() {
         var header = "Week of " + utility.formatDate(actualDate);
         console.log("%c" + header, "color:blue; background-color:floralWhite; padding:10px 50px");
@@ -53,6 +62,5 @@ function startProgram() {
 
     // print and update the list each week after a duration
     weekIntervalId = setInterval(run, duration);
-
 }
 
