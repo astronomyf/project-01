@@ -208,7 +208,7 @@ class Product {
 ## 6. Authors
 
 * ### Francesco Violante (*Team Leader*) 
-  Sviluppo delle seguenti funzioni e files:
+  Developed the following functions and files:
    * `config.js`/ `configSettings`
    * `custom.js`
    * `generator.js`/ `generateProduct` (co-author), `uniqueId`, `randomDecimal`
@@ -216,16 +216,19 @@ class Product {
    * `utility.js`/ `filterProducts`, `addDaysToDate`, `formatDate`
    * `style.css`
    * `index.html`
-* ### Gaetano Cimino: (*Programmer*) Sviluppo delle seguenti funzioni e files:
+* ### Gaetano Cimino: (*Programmer*) 
+  Developed the following functions and files:
    * `generator.js`/ `generateProduct` (co-author)
    * `main.js` (co-author)
    * `utility.js`/ `updateStatus`
-* ### Ivan Meotto: (*Programmer*) Sviluppo delle seguenti funzioni e files:
+* ### Ivan Meotto: (*Programmer*) 
+  Developed the following functions and files:
    * `config.js`/ `Product` class
    * `generator.js`/ `generateProduct` (co-author), `randomDate`
    * `main.js` (co-author)
    * `utility.js`/ `idInitializer`
-* ### Simone Resina: (*Programmer*) Sviluppo delle seguenti funzioni e files:
+* ### Simone Resina: (*Programmer*)
+  Developed the following functions and files:
    * `main.js` (co-author)
    * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`
 
