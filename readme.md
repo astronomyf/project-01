@@ -308,5 +308,3 @@ This program has been tested and works on the following browsers:
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-Copyright® 2020; Credits to: Gaetano Cimino, Ivan Meotto, Simone Resina, Francesco Violante. All rights reserved.
