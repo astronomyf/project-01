@@ -11,7 +11,7 @@
 7. **Features Delivered**
 8. **Browser Compatibility**
 9. **Changelog and Version History**
-10. **License**
+10. **License and Validation**
 
 ## 1. *Introduction:*
 
@@ -209,7 +209,7 @@ class Product {
 
 ## 6. *Authors:*
 
-* ### **Francesco Violante:** *Team Leader*; Sviluppo delle seguenti funzioni e files:
+* ### **Francesco Violante:** (*Team Leader*); Sviluppo delle seguenti funzioni e files:
    * `config.js`/ `configSettings`;
    * `custom.js`;
    * `generator.js`/ `generateProduct` (co-author); `uniqueId`;
@@ -217,16 +217,16 @@ class Product {
    * `utility.js`/ `filterProducts`; `addDaysToDate`; `formatDate`;
    * `style.css`;
    * `index.html`;
-* ### **Gaetano Cimino:** *Programmer* Sviluppo delle seguenti funzioni e files:
+* ### **Gaetano Cimino:** (*Programmer*) Sviluppo delle seguenti funzioni e files:
    * `generator.js`/ `generateProduct` (co-author);
    * `main.js` (co-author);
    * `utility.js`/ `updateStatus`;
-* ### **Ivan Meotto:** *Programmer* Sviluppo delle seguenti funzioni e files:
+* ### **Ivan Meotto:** (*Programmer*) Sviluppo delle seguenti funzioni e files:
    * `config.js`/ `Product` class;
    * `generator.js`/ `generateProduct` (co-author); `randomDate`;
    * `main.js` (co-author);
    * `utility.js`/ `idInitializer`;
-* ### **Simone Resina:** *Programmer* Sviluppo delle seguenti funzioni e files:
+* ### **Simone Resina:** (*Programmer*) Sviluppo delle seguenti funzioni e files:
    * `main.js` (co-author);
    * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`;
 
@@ -244,11 +244,11 @@ class Product {
 
 This program has been tested and works on the following browsers:
 
-* **Google Chrome;**
-* **Mozilla Firefox;**
-* **Opera;**
-* **Microsoft Edge;**
-* **Safari;**
+* **Google Chrome**
+* **Mozilla Firefox**
+* **Opera**
+* **Microsoft Edge**
+* **Safari**
 
 ## 9. *Changelog and Version History:*
 
@@ -304,8 +304,12 @@ This program has been tested and works on the following browsers:
 > * Added documentation for the project;
 > * General bug-fixing;
 
-## 10. *License*
+## 10. *License and Validation*
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+HTML and CSS files have been validated using the following tool:
+
+[HTML Validator](https://validator.w3.org/) & [CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 .
 
