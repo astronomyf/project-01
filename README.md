@@ -1,6 +1,4 @@
-# PROJECT 01: EXPIRY LIST
-
-## Summary
+# Project 01: Expiry list
 
 1. Introduction
 2. Project Description
