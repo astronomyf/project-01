@@ -8,11 +8,11 @@ This project generates a list of products in a supermarket. Each of these produc
 
 #### Appendix 1.1
 > The user can modify some parameters: 
-> * **number of weeks the program should run**;
-> * **the number of products that are shipped each week**;
-> * **the day from which the program starts**; 
-> * **the number of weeks after which a program is declared *'OLD'***;
-> * **the number of seconds after which a new set of products is generated, skipping the current week**;
+> * number of weeks the program should run
+> * the number of products that are shipped each week;
+> * the day from which the program starts; 
+> * the number of weeks after which a program is declared 'OLD';
+> * the number of seconds after which a new set of products is generated, skipping the current week;
 
 A product has 8 properties:
 * `id`, which uniquely identifies the product;
@@ -209,46 +209,46 @@ class Product {
 
 ## Authors:
 
-* ### **Francesco Violante:** *Capogruppo*; Sviluppo delle seguenti funzioni e files:
-   * `config.js`/ `configSettings`;
-   * `custom.js`;
-   * `generator.js`/ `generateProduct` (co-author); `uniqueId`;
-   * `main.js` (co-author);
-   * `utility.js`/ `filterProducts`; `addDaysToDate`; `formatDate`;
-   * `style.css`;
-   * `index.html`;
-* ### **Gaetano Cimino:** Sviluppo delle seguenti funzioni e files:
-   * `generator.js`/ `generateProduct` (co-author);
-   * `main.js` (co-author);
-   * `utility.js`/ `updateStatus`;
-* ### **Ivan Meotto:** Sviluppo delle seguenti funzioni e files:
-   * `config.js`/ `Product` class;
-   * `generator.js`/ `generateProduct` (co-author); `randomDate`;
-   * `main.js` (co-author);
-   * `utility.js`/ `idInitializer`;
-* ### **Simone Resina:** Sviluppo delle seguenti funzioni e files:
-   * `main.js` (co-author);
-   * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`;
+* **Francesco Violante:** *Capogruppo*; Sviluppo delle seguenti funzioni e files:
+   * `config.js`/ `configSettings`
+   * `custom.js`
+   * `generator.js`/ `generateProduct` (co-author); `uniqueId`
+   * `main.js` (co-author)
+   * `utility.js`/ `filterProducts`, `addDaysToDate`, `formatDate`
+   * `style.css`
+   * `index.html`
+* **Gaetano Cimino:** Sviluppo delle seguenti funzioni e files:
+   * `generator.js`/ `generateProduct` (co-author)
+   * `main.js` (co-author)
+   * `utility.js`/ `updateStatus`
+* **Ivan Meotto:** Sviluppo delle seguenti funzioni e files:
+   * `config.js`/ `Product` class
+   * `generator.js`/ `generateProduct` (co-author), `randomDate`
+   * `main.js` (co-author)
+   * `utility.js`/ `idInitializer`
+* **Simone Resina:** Sviluppo delle seguenti funzioni e files:
+   * `main.js` (co-author)
+   * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`
 
 ## Features delivered:
 
-* ### Random Products Generation;
-* ### Different Products every program's iteration;
-* ### Almost Infinite products' combinations;
-* ### Easy-to-read console output;
-* ### Easy-to-use and Easy-to-learn user interface;
-* ### Fully customizable experience;
-* ### Different colors in the output;
+* Random Products Generation
+* Different Products every program's iteration
+* Almost Infinite products' combinations
+* Easy-to-read console output
+* Easy-to-use and Easy-to-learn user interface
+* Fully customizable experience
+* Different colors in the output
 
 ## Browser Compatibility:
 
 This program has been tested and works on the following browsers:
-
-* **Google Chrome;**
-* **Mozilla Firefox;**
-* **Opera;**
-* **Microsoft Edge;**
-* **Safari;**
+* Google Chrome
+* Mozilla Firefox
+* Opera
+* Microsoft Internet Explorer 11
+* Microsoft Edge
+* Safari
 
 ## Changelog and Version History:
 
