@@ -230,7 +230,7 @@ class Product {
    * `main.js` (co-author)
    * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`
 
-## Features delivered:
+## Features delivered
 
 * Random Products Generation
 * Different Products every program's iteration
