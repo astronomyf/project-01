@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: custom.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: custom.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @file custom.js
+ * @author Francesco Violante
+ * 
+ * Extract values from HTML form to customize settings for the printing of the list.
+ */
+
+ /**
+  * Function hide and display HTML form and buttons on index page.
+  */
+ function customSettings() {
+    var form = document.getElementById("form-settings");
+    var buttons = document.getElementById("buttons-index");
+
+    if(form.style.display === "none") {
+        form.style.display = "block";
+        buttons.style.display = "none";
+    } else if(buttons.style.display === "block") {
+        form.style.display = "none";
+        buttons.style.display = "block";
+    } else {
+        form.style.display = "none";
+        buttons.style.display = "block";
+    }
+ }
+
+ /**
+  * Function hide buttons and shows a message to the user.
+  */
+ function showRunMessage() {
+    var buttons = document.getElementById("buttons-index");
+    buttons.style.display = "none";
+
+    var form = document.getElementById("form-settings");
+    form.style.display = "none";
+
+    var alert = document.getElementById("run-message");
+    alert.style.display = "block";
+ }
+
+ /**
+  * Function get values from HTML form and updates the config object.
+  */
+ function getCustomSettings() {
+
+     //get values from HTML form
+     var numberOfWeeks = parseInt(document.getElementById("numberOfWeeks").value) || configSettings.numberOfWeeks;
+     var weeksBeforeOld = parseInt(document.getElementById("weeksBeforeOld").value) || configSettings.weeksBeforeOld;
+     var numberOfDays = parseInt(document.getElementById("numberOfDays").value) || configSettings.daysToAdd;
+     var numberOfNewProducts = parseInt(document.getElementById("numberOfNewProducts").value) || configSettings.numberOfNewProducts;
+     var minSeconds = parseInt(document.getElementById("minSeconds").value) || configSettings.minSeconds;
+     var maxSeconds = parseInt(document.getElementById("maxSeconds").value) || configSettings.maxSeconds;
+     var daysOfWeek = parseInt(document.getElementById("daysOfWeek").value) || configSettings.daysOfWeek;
+     var numberOfZeros = parseInt(document.getElementById("numberOfZeros").value) || configSettings.numberOfZeros;
+     var getSelect = document.getElementById("filler");
+     var filler = getSelect.options[getSelect.selectedIndex].value.toString() || configSettings.filler; 
+     //var expirationDate = new Date(document.getElementById("expirationDate").value) || configSettings.minExpDate;
+     var expirationDate = $("#expirationDate").data("datepicker").getDate();
+      
+     //update settings with custom values
+     configSettings.numberOfWeeks = numberOfWeeks;
+     configSettings.weeksBeforeOld = weeksBeforeOld;
+     configSettings.numberOfDays = numberOfDays;
+     configSettings.numberOfNewProducts = numberOfNewProducts;
+     configSettings.minSeconds = minSeconds;
+     configSettings.maxSeconds = maxSeconds;
+     configSettings.daysOfWeek = daysOfWeek;
+     configSettings.numberOfZeros = numberOfZeros;
+     configSettings.filler = filler;
+     configSettings.minExpDate = expirationDate;
+ }
+
+ // call functions when the buttons are clicked
+ // check if addEventListener can be used, otherwise (in IE) use attachEvent
+
+ // run program with default settings
+ var runButton = document.getElementById("run-button");
+ if(runButton.addEventListener) {
+   runButton.addEventListener("click", function() {
+      showRunMessage();
+      startProgram();
+   }, false);
+ } else {
+   runButton.attachEvent('onclick', function() {
+      showRunMessage();
+      startProgram();
+   });
+ }
+
+ // change settings
+ var settingsButton = document.getElementById("settings-button");
+ if(settingsButton.addEventListener) {
+   settingsButton.addEventListener("click", function() {
+      customSettings();
+   }, false);
+ } else {
+   settingsButton.attachEvent('onclick', function() {
+      customSettings();
+   });
+ }
+
+ // go back
+ var backButton = document.getElementById("back-button");
+ if(backButton.addEventListener) {
+   backButton.addEventListener("click", function() {
+      customSettings();
+   }, false);
+ } else {
+   backButton.attachEvent('onclick', function() {
+      customSettings();
+   });
+ }
+
+ // get custom settings and run program
+ var customButton = document.getElementById("custom-button");
+ if(customButton.addEventListener) {
+   customButton.addEventListener("click", function() {
+      getCustomSettings();
+      showRunMessage();
+      startProgram();
+   }, false);
+ } else {
+   customButton.attachEvent('onclick', function() {
+      getCustomSettings();
+      showRunMessage();
+      startProgram();
+   });
+ }</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addDaysToDate">addDaysToDate</a></li><li><a href="global.html#convertStatus">convertStatus</a></li><li><a href="global.html#customSettings">customSettings</a></li><li><a href="global.html#fillingSpaces">fillingSpaces</a></li><li><a href="global.html#filterProducts">filterProducts</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#formattedOutput">formattedOutput</a></li><li><a href="global.html#generateProduct">generateProduct</a></li><li><a href="global.html#getCustomSettings">getCustomSettings</a></li><li><a href="global.html#idInitializer">idInitializer</a></li><li><a href="global.html#paddingFunc">paddingFunc</a></li><li><a href="global.html#randomDate">randomDate</a></li><li><a href="global.html#randomDecimal">randomDecimal</a></li><li><a href="global.html#repeatString">repeatString</a></li><li><a href="global.html#showRunMessage">showRunMessage</a></li><li><a href="global.html#statusColor">statusColor</a></li><li><a href="global.html#uniqueId">uniqueId</a></li><li><a href="global.html#updateStatus">updateStatus</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue May 12 2020 16:58:07 GMT+0200 (GMT+02:00)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 01</title>
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- bootstrap datepicker css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+    <!-- Load Babel -->
+    <!-- v6 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js">
     <![endif]-->
-    <!-- custom css -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap datepicker css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+    <!-- Custom css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -91,9 +94,9 @@
                           </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="expirationDate" class="font-weight-bold">Choose the starting date of the program</label>
+                        <label for="expDate" class="font-weight-bold">Choose the starting date of the program</label>
                         <div class="input-group date" id="expirationDate" data-provide="datepicker">
-                            <input type="text" class="form-control" data-format="MM-dd-yyyy" placeholder="Select a date">
+                            <input type="text" id="expDate" class="form-control" data-format="MM-dd-yyyy" placeholder="Select a date">
                             <div class="input-group-addon">
                                 <span class="glyphicon glyphicon-th"></span>
                             </div>
@@ -116,11 +119,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <!-- custom js -->
-    <script type="text/javascript" src="scripts/utility.js"></script>
-    <script type="text/javascript" src="scripts/config.js"></script>
-    <script type="text/javascript" src="scripts/generator.js"></script>
-    <script type="text/javascript" src="scripts/output.js"></script>
-    <script type="text/javascript" src="scripts/custom.js"></script>
-    <script type="text/javascript" src="scripts/main.js"></script>
+    <script src="scripts/utility.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/generator.js"></script>
+    <script src="scripts/output.js"></script>
+    <script src="scripts/custom.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
