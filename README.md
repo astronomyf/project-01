@@ -1,8 +1,8 @@
 # Project 01: Expiry list
 
-## Introduction:
+## Introduction
 
-## Project description:
+## Project description
 
 This project generates a list of products in a supermarket. Each of these products has an expiry date, and every week the program discards the expired goods. This program generates a constant amount of new products each week, until it reaches a predetermined number of weeks. 
 
@@ -44,7 +44,7 @@ A product has 8 properties:
    > You can also open the Console before clicking on the *Run* button. In this case, you can see every step of the execution from the beginning instead of seeing it from a certain point
 4. The execution stops automatically. If you want to restart the program, simply press `F5` on the keyboard or click the `Reload that page` button in the top-left corner.
 
-## Files and Project Structure:
+## Files and Project Structure
 
 The project is structured as it follows:
 * One main directory with the following files:
@@ -60,7 +60,7 @@ The project is structured as it follows:
    * The `index.html` file;
    * This `readme.md` file;
 
-## Files' Snippets:
+## Files' Snippets
 
 * `config.js`/ class `Product`
 ```javascript
@@ -207,7 +207,7 @@ class Product {
         }
 ```
 
-## Authors:
+## Authors
 
 * **Francesco Violante:** *Capogruppo*; Sviluppo delle seguenti funzioni e files:
    * `config.js`/ `configSettings`
@@ -240,7 +240,7 @@ class Product {
 * Fully customizable experience
 * Different colors in the output
 
-## Browser Compatibility:
+## Browser Compatibility
 
 This program has been tested and works on the following browsers:
 * Google Chrome
@@ -250,7 +250,7 @@ This program has been tested and works on the following browsers:
 * Microsoft Edge
 * Safari
 
-## Changelog and Version History:
+## Changelog and Version History
 
 > **Version 1.0**
 > 
