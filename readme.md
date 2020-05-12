@@ -4,11 +4,11 @@
 
 
 
-## *Project description:*
+## Project description:
 
 This project generates a list of products in a supermarket. Each of these products has an expiry date, and every week the program discards the expired goods. This program generates a constant amount of new products each week, until it reaches a predetermined number of weeks. 
 
-> #### Appendix 1.1
+#### Appendix 1.1
 > The user can modify some parameters: 
 > * **number of weeks the program should run**;
 > * **the number of products that are shipped each week**;
@@ -30,7 +30,7 @@ A product has 8 properties:
 * `check`, the number of times the program has checked this item to see if it is expired or not;
 * `daysOnShelf`, the number of days this item has been on the shelf;
 
-## *Usage and Configuration: *
+## Usage and Configuration:
 
 1. To launch the program, the user must launch the `index.html` file;
 2. When `index.html` is opened, the user is greeted with a title and two buttons: *Run* and *Change Settings*;
@@ -46,7 +46,7 @@ A product has 8 properties:
    > You can also open the Console before clicking on the *Run* button. In this case, you can see every step of the execution from the beginning instead of seeing it from a certain point
 4. The execution stops automatically. If you want to restart the program, simply press `F5` on the keyboard or click the `Reload that page` button in the top-left corner.
 
-## *Files and Project Structure:*
+## Files and Project Structure:
 
 The project is structured as it follows:
 * One main directory with the following files:
@@ -62,7 +62,7 @@ The project is structured as it follows:
    * The `index.html` file;
    * This `readme.md` file;
 
-## *Files' Snippets:*
+## Files' Snippets:
 
 * `config.js`/ class `Product`
 ```javascript
@@ -209,7 +209,7 @@ class Product {
         }
 ```
 
-## *Authors:*
+## Authors:
 
 * ### **Francesco Violante:** *Capogruppo*; Sviluppo delle seguenti funzioni e files:
    * `config.js`/ `configSettings`;
@@ -232,7 +232,7 @@ class Product {
    * `main.js` (co-author);
    * `output.js`/ `repeatString`, `fillingSpaces`, `paddingFunc`, `convertStatus`, `formattedOutput`;
 
-## *Features delivered:*
+## Features delivered:
 
 * ### Random Products Generation;
 * ### Different Products every program's iteration;
@@ -242,7 +242,7 @@ class Product {
 * ### Fully customizable experience;
 * ### Different colors in the output;
 
-## *Browser Compatibility:*
+## Browser Compatibility:
 
 This program has been tested and works on the following browsers:
 
@@ -252,7 +252,7 @@ This program has been tested and works on the following browsers:
 * **Microsoft Edge;**
 * **Safari;**
 
-## *Changelog and Version History:*
+## Changelog and Version History:
 
 > **Version 1.0**
 > 
@@ -306,11 +306,7 @@ This program has been tested and works on the following browsers:
 > * Added documentation for the project;
 > * General bug-fixing;
 
-.
-
-.
-
-.
-
+## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Copyright® 2020; Credits to: Gaetano Cimino, Ivan Meotto, Simone Resina, Francesco Violante. All rights reserved.
