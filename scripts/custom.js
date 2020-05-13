@@ -54,8 +54,7 @@
      var numberOfZeros = parseInt(document.getElementById("numberOfZeros").value) || configSettings.numberOfZeros;
      var getSelect = document.getElementById("filler");
      var filler = getSelect.options[getSelect.selectedIndex].value.toString() || configSettings.filler; 
-     //var expirationDate = new Date(document.getElementById("expirationDate").value) || configSettings.minExpDate;
-     var expirationDate = $("#expirationDate").data("datepicker").getDate();
+     var expirationDate = $("#expirationDate").data("datepicker").getDate() || configSettings.minExpDate;
       
      //update settings with custom values
      configSettings.numberOfWeeks = numberOfWeeks;
